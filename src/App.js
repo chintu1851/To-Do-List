@@ -2,13 +2,12 @@ import { useState, createContext } from 'react';
 import './App.css';
 import Description from './Description';
 
-
 export const Appcontext = createContext(null);
+
 const App = () => {
   const [task, setTask] = useState('');
   const [tasks, setTasks] = useState([]);
   const [editIndex, setEditIndex] = useState(null);
-
 
   const fieldClick = (e) => {
     setTask(e.target.value);
@@ -19,7 +18,11 @@ const App = () => {
       alert("Please enter value")
     }
     else {
-      setTasks([...tasks, { taskName: task, completed: false }]);
+      const newTask = { taskName: task, completed: false };
+      const updatedTasks = [...tasks, newTask];
+      localStorage.setItem('allTasks', JSON.stringify(updatedTasks));
+      setTasks(updatedTasks);
+      console.log("this is tasks", updatedTasks)
       setTask('');
     }
   };
@@ -28,22 +31,27 @@ const App = () => {
     const updatedTasks = [...tasks];
     updatedTasks.splice(index, 1);
     setTasks(updatedTasks);
+    localStorage.setItem('allTasks', JSON.stringify(updatedTasks)); // Update localStorage
   };
 
   const checkComplete = (index) => {
     const updatedTasks = [...tasks];
     updatedTasks[index].completed = true;
     setTasks(updatedTasks);
+     console.log("this is tasks", updatedTasks)
+     localStorage.setItem('allTasks', JSON.stringify(updatedTasks));
   };
 
   const updateitem = (index) => {
-    setEditIndex(index); // Set the index of the task being edited
+    setEditIndex(index);
+
   };
 
   const handleEditChange = (e, index) => {
     const updatedTasks = [...tasks];
     updatedTasks[index].taskName = e.target.value;
     setTasks(updatedTasks);
+    localStorage.setItem('allTasks', JSON.stringify(updatedTasks));
   };
 
   return (
@@ -59,6 +67,7 @@ const App = () => {
       <Appcontext.Provider value={{ task, tasks, editIndex, setTask, setTasks, setEditIndex, buttonClick, deletetask, checkComplete, updateitem, handleEditChange }}>
         <Description></Description>
       </Appcontext.Provider>
+
     </div>
 
   );
