@@ -1,38 +1,111 @@
-.App {
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+.checktask {
+  background-color: antiquewhite;
+}
+
+h1 {
   text-align: center;
+  padding: 20px;
+  color: black
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2 {
+  text-align: center;
+  padding: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.submitbutton {
+  padding: 15px;
+  margin: 10px;
+  width: 150px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(238, 172, 107);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.submitbutton {
+  color: rgb(0, 0, 0);
+  font-size: larger;
+  font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+.inputfield {
+  text-align: center;
+  background-color: rgb(110, 127, 236);
+}
+
+.inputtodo {
+  border: none;
+  padding: 15px;
+  margin: 30px;
+  border-radius: 10px;
+  box-shadow: 2px wheat;
+  width: 300px;
+  color: blue;
+  font-size: medium;
+
+}
+
+h3 {
+  padding: 20px;
+  font-size: 20px;
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+
+
+}
+
+.deletetbutton {
+  padding: 10px;
+  margin: 7px;
+  width: 120px;
+  border-radius: 10px;
+  border: none;
+  background-color: red;
   color: white;
+  font-size: medium;
+  font-family: Georgia, 'Times New Roman', Times, serif
 }
 
-.App-link {
-  color: #61dafb;
+.completebutton {
+  padding: 10px;
+  margin: 7px;
+  width: 120px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(121, 242, 186);
+  color: rgb(0, 0, 0);
+  font-size: medium;
+  font-family: Georgia, 'Times New Roman', Times, serif
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.editbutton {
+  padding: 10px;
+  margin: 7px;
+  width: 120px;
+  border-radius: 10px;
+  border: none;
+  background-color: blue;
+  color: white;
+  font-size: medium;
+  font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+.editinput{
+    border: 1px solid gray;
+  padding: 15px;
+  margin: 30px;
+  border-radius: 10px;
+  box-shadow: 2px wheat;
+  width: 300px;
+  color: blue;
+  font-size: medium;
+}
+.maindiv{
+  margin-right: 20px;
 }
